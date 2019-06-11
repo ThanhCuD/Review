@@ -10,6 +10,12 @@ namespace Learn
     {
         static void Main(string[] args)
         {
+            MyIEnumable<int> myList = new MyIEnumable<int>(new int[] { 1, 3, 4, 6, 34, 342 });
+            foreach (var item in myList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
         }
     }
 }
