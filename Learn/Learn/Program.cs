@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,22 @@ namespace Learn
     {
         static void Main(string[] args)
         {
-            MyIEnumable<int> myList = new MyIEnumable<int>(new int[] { 1, 3, 4, 6, 34, 342 });
-            foreach (var item in myList)
-            {
-                Console.WriteLine(item);
-            }
+            GenrericPrivateClass();
+        }
+        #region GenrericPrivateClass
+        static void GenrericPrivateClass()
+        {
+            var type = typeof(TestPrivateClass).GetNestedType("InnerClass", System.Reflection.BindingFlags.NonPublic);
+            // create a new private object
+            var obj = Activator.CreateInstance(type);
+            // Create list
+            var lst = DTRun.GenListGeneric(type);
+            lst.Add(obj);
+            
             Console.ReadKey();
         }
+        #endregion
+
     }
+
 }
