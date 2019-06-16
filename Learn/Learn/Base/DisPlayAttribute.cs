@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Learn
+namespace Learn.Base
 {
     [AttributeUsage(AttributeTargets.Property,AllowMultiple =false,Inherited =false)]
     public class DisPlayAttribute : Attribute
