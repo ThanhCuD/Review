@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Learn
+namespace Learn.Base
 {
     public class DTRun
     {
@@ -37,6 +37,32 @@ namespace Learn
             }
             return dic;
         }
+
+
+        #region GenrericPrivateClass
+        static void GenrericPrivateClass()
+        {
+            var type = typeof(TestPrivateClass).GetNestedType("InnerClass", System.Reflection.BindingFlags.NonPublic);
+            // create a new private object
+            var obj = Activator.CreateInstance(type);
+            // Create list
+            var lst = DTRun.GenListGeneric(type);
+            lst.Add(obj);
+
+            Console.ReadKey();
+        }
+        #endregion
+
     }
-    
+    public class Test
+    {
+        [DisPlay(Name = "和我の")]
+        public string Namibia { get; set; }
+        [DisPlay(Name = "我是赌场")]
+        public string API { get; set; }
+        [DisPlay(Name = "我是赌场")]
+        public string Pro { get; set; }
+
+    }
+
 }
