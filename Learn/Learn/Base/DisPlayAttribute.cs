@@ -10,5 +10,6 @@ namespace Learn.Base
     public class DisPlayAttribute : Attribute
     {
         public string Name;
+        public string New;
     }
 }
